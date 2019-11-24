@@ -1,23 +1,9 @@
-language:       python
-
+language: python
 python:
-  - "3.6"
-  - "3.6.5"
+  -"3.6"
+services:
+  -docker
+before_script: pip install docket-compose
 
-os:
-  - linux
-  - osx
-
-matrix:
-  fast_finish:  true
-
-install:
-  - pip3 install --upgrade pip
-  - pip3 install pylint coverage coveralls pip-autoremove
-
-after_success:
-- coveralls
-
-notifications:
-  on_success:   change
-  on_failure:   always
+script:
+  -docker-compose run app sh -c "python manage.py test && flake8"
