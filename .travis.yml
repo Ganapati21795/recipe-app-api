@@ -5,5 +5,7 @@ services:
   - docker
 before_script: pip install docket-compose
 
+docker-compose --version: 1.4.0
+
 script:
   - docker-compose run app sh -c "python manage.py test && flake8"
