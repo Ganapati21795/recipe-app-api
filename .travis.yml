@@ -2,10 +2,8 @@ language: python
 python:
   - "3.6"
 
-image: docker:stable
-
 services:
-  - docker:stable-dind
+  - docker
 
 
 before_script: 
