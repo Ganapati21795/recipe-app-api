@@ -8,9 +8,8 @@ services:
   - docker:stable-dind
 
 
-
-
 before_script: 
+  - add --no-cache py-pip
   - pip install docket-compose~=1.23.0
 
 script:
