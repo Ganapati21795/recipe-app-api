@@ -2,8 +2,9 @@ language: python
 python:
   - "3.6"
 services:
-  - docker
+  - docker:stable
 before_script: pip install docket-compose~=1.23.0
 
 script:
+  - apk add --no-cache py-pip
   - docker-compose run app sh -c "python manage.py test && flake8" 
