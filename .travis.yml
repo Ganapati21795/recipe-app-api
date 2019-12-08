@@ -2,7 +2,7 @@ language: python
 python:
   - "3.6"
 services:
-  - docker:stable
+  - docker
 before_script: pip install docket-compose~=1.23.0
 
 script:
