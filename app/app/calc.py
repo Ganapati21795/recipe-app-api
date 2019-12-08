@@ -1,6 +1,3 @@
-
-
-
 def add(x, y):
     """
     add two numbers
